@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link rel="stylesheet" href="/Week 6 Assignment/week6.css" />
+  </head>
+  <body>
+    <h1>UNIVERSITY OF IBADAN</h1>
+    <h3>
+      <strong>Recte sapere fons</strong>
+    </h3>
+    <div class="flex-container">
+      <table>
+        <th>Department</th>
+        <th>Course</th>
+        <th>Level</th>
+        <tr>
+          <td>Computer Science</td>
+          <td>CSC 541</td>
+          <td>500L</td>
+        </tr>
+        <tr>
+          <td>Medicine and Surgery</td>
+          <td>Med 214</td>
+          <td>200L</td>
+        </tr>
+        <tr>
+          <td>Economics</td>
+          <td>Eco 341</td>
+          <td>300L</td>
+        </tr>
+        <tr>
+          <td>Sociology</td>
+          <td>soc 211</td>
+          <td>200L</td>
+        </tr>
+        <tr>
+          <td>Philosophy</td>
+          <td>phi 211</td>
+          <td>200L</td>
+        </tr>
+      </table>
+
+      <p class="btn-paragraph">Click button below to fill your data!</p>
+      <button class="top-button" id="showForm">Show form</button>
+      <div id="modal">
+          <form action="data" id="myForm">
+            <label for="name">First Name:</label>
+            <input type="text" id="first_name" />
+            <br>
+            <label for="last_name">Last Name:</label>
+            <input type="text" id="last_name" />
+            <br>
+            <label for="email">Email:</label>
+            <input type="text" id="email" />
+            <br>
+            <label for="Courses">Course:</label>
+            <input type="text" id="Course" />
+            <br>
+            <label for="number">Phone number:</label>
+            <input type="number" id="number" />
+            <br>
+            <button type="submit" id="submit">Submit</button>
+          </form>
+      </div>
+    </div>
+
+    <script>
+      const form = document.getElementById("myForm");
+      const email = document.getElementById("email");
+      const phoneNumber = document.getElementById("number");
+
+      number.oninput = function () {
+        if (number.value.length < 14) {
+          number.setCustomValidity("Enter your country code");
+        } else {
+          number.setCustomValidity("");
+        }
+      };
+
+      form.onclick = function (e) {
+        if (!email.value) {
+          e.preventDefault();
+          errorMessage.textContent = "Email is required!";
+        }
+      };
+
+      const modal = document.getElementById("modal");
+      const showform = document.getElementById("showForm");
+      const submit = document.getElementById("submit");
+
+      showForm.onclick = function () {
+        modal.style.display = "block";
+      };
+      submit.onclick = function () {
+        modal.style.display = "none";
+      };
+    </script>
+  </body>
+</html>
